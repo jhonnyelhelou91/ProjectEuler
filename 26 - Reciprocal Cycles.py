@@ -19,7 +19,6 @@ def getCycle(n):
 n = 10
 
 primes = getPrimes(n)
-print(getCycle(7))
 result_p = 0
 result = 0
 for x in primes:
