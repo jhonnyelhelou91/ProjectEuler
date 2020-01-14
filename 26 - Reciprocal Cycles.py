@@ -2,21 +2,20 @@ def getPrimes(n):
     sieve = [True] * n
     for i in range(3,int(n**0.5)+1,2):
         if sieve[i]:
-            sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
+            sieve[i*i :: 2*i] = [False] * ((n-i*i-1)//(2*i)+1)
     return [2] + [i for i in range(3,n,2) if sieve[i]]
 
 def getCycle(n):
-    _hash = {}
     a = 10 % n
-    t = 1
-    _hash[1] = t
+    first = a
+    count = 0
 
-    while _hash[a] == None:
-        _hash[a] = t
+    while True:
         a = a * 10 % n
-        t += 1
-    return t - _hash[a]
-n = 10
+        count += 1
+        if a == first or a == 0:
+            return count
+n = 1000
 
 primes = getPrimes(n)
 result_p = 0
@@ -27,4 +26,4 @@ for x in primes:
         result_p = x
         result = cycle
 
-print (result_p, result)
+print ('1 /', result_p, '=>', result)
