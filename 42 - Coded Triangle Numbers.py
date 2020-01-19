@@ -1,4 +1,6 @@
 # t(n) = n * (n + 1) / 2
+# n2 + n - 2t(n) = 0
+# n = [-1 +/- sqrt(1 + 8t(n))] / 2
 
 def isTriangle(x):
     return (8 * x + 1 ) ** 0.5 % 1 == 0
