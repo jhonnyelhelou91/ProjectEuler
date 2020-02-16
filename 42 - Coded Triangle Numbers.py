@@ -2,6 +2,7 @@
 def isTriangular(x):
     return (-1 + (8 * x + 1) ** 0.5) % 4 == 0
 
+
 def isWordTriangle(word):
     # trim quotes from start
     if (word[0] == '"'):
@@ -13,7 +14,7 @@ def isWordTriangle(word):
     num = 0
     for c in word:
         num += 1 + ord(c) - ord('a')
-    return isTriangle(num)
+    return isTriangular(num)
 
 
 file1 = open('p042_words.txt', 'r')
